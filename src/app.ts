@@ -1,5 +1,3 @@
-class Game {
-    run = function() {
-        
-    }
+export class Game {
+    run() { }
 }
