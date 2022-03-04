@@ -4,10 +4,9 @@ export class Game {
         this.team = team
     }
     run() {
-        if(this.team !== undefined){
+        if(this.team){
             return this.team
-        } else {
-            return null
         }
+        return null
     }
 }
