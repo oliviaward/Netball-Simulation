@@ -1,3 +1,5 @@
 export class Game {
-    run() { }
+    run() {
+        return null
+     }
 }
