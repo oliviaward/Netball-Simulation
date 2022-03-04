@@ -1,11 +1,16 @@
 export class Game {
-    private team
+    private team1
+    private team2
     constructor(team1?, team2?) {
-        this.team = team1
+        this.team1 = team1
+        this.team2 = team2
     }
     run() {
-        if(this.team){
-            return this.team
+        if(this.team2) {
+            return this.team2
+        }
+        if(this.team1){
+            return this.team1
         }
         return null
     }
