@@ -14,3 +14,12 @@ describe('When simulating a game with only one team', () => {
         expect(winner).toBe(theOnlyTeam)
     })
 })
+describe('When simulating a game with 2 teams', () => {
+    it('Should return a winner', () => {
+        const losingTeam = "green team"
+        const winningTeam = "yellow team"
+        const game = new Game(losingTeam, winningTeam)
+        const winner = game.run()
+        expect(winner).toBe(winningTeam)
+    })
+})

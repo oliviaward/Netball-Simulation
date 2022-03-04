@@ -1,7 +1,7 @@
 export class Game {
     private team
-    constructor(team?) {
-        this.team = team
+    constructor(team1?, team2?) {
+        this.team = team1
     }
     run() {
         if(this.team){
