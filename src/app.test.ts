@@ -32,3 +32,14 @@ describe('When simulating a game where the first team wins', () => {
         expect(winner).toBe(winningTeam)
     })
 })
+
+//When simulating a game where a random team wins
+//When simulating a game where the better team wins
+//Adding WLD to team data after result is returned
+//Creating an agenda so all teams play against eachother
+//Ranking team against opponent
+//Ranking team against external leaderboard
+//Determining a quarter final
+//Determining a semi final based of quarter results
+//Determinging a final based off semi results
+//Publishing end of season league results
