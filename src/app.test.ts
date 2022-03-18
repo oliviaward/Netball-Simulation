@@ -1,5 +1,6 @@
 import { Game } from "./app"
-class StubbedSimulator {
+import { Simulator } from "./simulator"
+class StubbedSimulator implements Simulator {
     private winner
     setWinner(winner) {
         this.winner = winner
@@ -51,7 +52,7 @@ describe('When simulating a game where the first team wins', () => {
 //Adding WLD to team data after result is returned
 //Creating an agenda so all teams play against eachother
 //Ranking team against opponent
-//Ranking team against external leaderboard
+//Ranking team against rest of leaderboard
 //Determining a quarter final
 //Determining a semi final based of quarter results
 //Determinging a final based off semi results

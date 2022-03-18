@@ -1,11 +1,14 @@
+import { Simulator } from "./simulator"
+
 export class Game {
     private team1
     private team2
-    private simulator
-    constructor(team1?, team2?, simulator?) {
+    private simulator: Simulator
+    constructor(team1?, team2?, simulator?: Simulator) {
         this.team1 = team1
         this.team2 = team2
         this.simulator = simulator
+    
 
     }
     run() {
@@ -18,3 +21,4 @@ export class Game {
         return this.simulator.pickWinner(this.team1, this.team2)
     }
 }
+
