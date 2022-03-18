@@ -1,17 +1,20 @@
 export class Game {
     private team1
     private team2
-    constructor(team1?, team2?) {
+    private simulator
+    constructor(team1?, team2?, simulator?) {
         this.team1 = team1
         this.team2 = team2
+        this.simulator = simulator
+
     }
     run() {
-        if(this.team2) {
-            return this.team2
+        if(!this.team1 && !this.team2) {
+            return null 
         }
-        if(this.team1){
+        if(!this.team2){
             return this.team1
         }
-        return null
+        return this.simulator.pickWinner(this.team1, this.team2)
     }
 }

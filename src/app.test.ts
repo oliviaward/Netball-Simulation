@@ -1,4 +1,13 @@
 import { Game } from "./app"
+class StubbedSimulator {
+    private winner
+    setWinner(winner) {
+        this.winner = winner
+    }
+    pickWinner(team1, team2) {
+        return this.winner
+    }  
+}
 
 describe('when simulating a game with no teams', () => {
     it('shouldnt find a winner', () => {
@@ -18,7 +27,9 @@ describe('When simulating a game where the second team wins', () => {
     it('Should return the second team as the winner', () => {
         const losingTeam = "green team"
         const winningTeam = "yellow team"
-        const game = new Game(losingTeam, winningTeam)
+        const simulator = new StubbedSimulator()
+        simulator.setWinner(winningTeam)
+        const game = new Game(losingTeam, winningTeam, simulator)
         const winner = game.run()
         expect(winner).toBe(winningTeam)
     })
@@ -27,7 +38,9 @@ describe('When simulating a game where the first team wins', () => {
     it('Should return the first team as the winner', () => {
         const winningTeam = "yellow team"
         const losingTeam = "green team"
-        const game = new Game(winningTeam, losingTeam)
+        const simulator = new StubbedSimulator()
+        simulator.setWinner(winningTeam)
+        const game = new Game(winningTeam, losingTeam, simulator)
         const winner = game.run()
         expect(winner).toBe(winningTeam)
     })
