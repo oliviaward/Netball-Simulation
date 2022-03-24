@@ -8,9 +8,8 @@ export class RandomSimulator implements Simulator{
     pickWinner(team1: any, team2: any) {
         if(this.rng() > 0.5) {
             return team1
-        }else {
-            return team2
         }
+         return team2
     }
 
 }
