@@ -1,6 +1,6 @@
 import { Game } from "./app"
 import { Simulator } from "./simulator"
-class StubbedSimulator implements Simulator {
+export class StubbedSimulator implements Simulator {
     private winner
     setWinner(winner) {
         this.winner = winner

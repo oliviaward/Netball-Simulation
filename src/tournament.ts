@@ -1,4 +1,10 @@
+import { Simulator } from "./simulator";
+
 export class Tournament {
+    simulator: Simulator;
+    setSimulator(simulator: Simulator) {
+        this.simulator = simulator
+    }
     teams: string[];
     execute() {
         if(this.teams.length == 0) {
@@ -14,6 +20,7 @@ export class Tournament {
 }
 export class TournamentResult {
     type: ResultType;
+    winner: any;
     constructor(resultType: ResultType) {
         this.type = resultType
         
