@@ -1,5 +1,5 @@
 import { ResultType, Tournament } from "./tournament"
-import { StubbedSimulator } from "./app.test"
+import { StubbedSimulator } from "./game.test"
 
 
 describe('When simulating a tournament with no teams', () => {

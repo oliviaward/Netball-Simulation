@@ -1,4 +1,4 @@
-import { Game } from "./app"
+import { Game } from "./game"
 import { Simulator } from "./simulator"
 export class StubbedSimulator implements Simulator {
     private winner
