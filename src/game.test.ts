@@ -1,15 +1,5 @@
 import { Game } from "./game"
-import { Simulator } from "./simulator"
-export class StubbedSimulator implements Simulator {
-    private winner
-    setWinner(winner) {
-        this.winner = winner
-    }
-    pickWinner(team1, team2) {
-        return this.winner
-    }  
-}
-
+import { StubbedSimulator } from "./stubbedSimulator"
 describe('when simulating a game with no teams', () => {
     it('shouldnt find a winner', () => {
         const game = new Game()
@@ -46,6 +36,8 @@ describe('When simulating a game where the first team wins', () => {
         expect(winner).toBe(winningTeam)
     })
 })
+
+
 
 //When simulating a game where a random team wins
 //When simulating a game where the better team wins

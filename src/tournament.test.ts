@@ -1,5 +1,5 @@
 import { ResultType, Tournament } from "./tournament"
-import { StubbedSimulator } from "./game.test"
+import { StubbedSimulator } from "./stubbedSimulator"
 
 
 describe('When simulating a tournament with no teams', () => {
@@ -33,6 +33,26 @@ describe('When simulating a tournament with two teams', () => {
         const tournament = new Tournament([winningTeam, losingTeam])
         const simulator = new StubbedSimulator()
         simulator.setWinner(winningTeam)
+        tournament.setSimulator(simulator)
+        //Act
+        var result = tournament.execute()
+        //Assert
+        expect(result.type).toBe("Completed")
+        expect(result.winner).toBe(winningTeam)
+    })
+})
+
+describe('When simulating a tournament with three teams', () => {
+    it('Pick a winner picked by the simulator', () => {
+        //Arrange
+        const winningTeam = "winning team"
+        const otherTeam = "middle team"
+        const otherOtherTeam = "losing team"
+        const tournament = new Tournament([otherTeam, otherOtherTeam, winningTeam])
+        const simulator = new StubbedSimulator()
+        simulator.mockSimulation(otherTeam, otherOtherTeam, true)
+        simulator.mockSimulation(otherTeam, winningTeam, false)
+        simulator.mockSimulation(winningTeam, otherOtherTeam, true)
         tournament.setSimulator(simulator)
         //Act
         var result = tournament.execute()
